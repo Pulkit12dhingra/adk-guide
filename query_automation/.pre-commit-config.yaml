@@ -1,0 +1,39 @@
+# Pre-commit configuration for query automation project
+repos:
+  # Ruff linting and formatting
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.7.4
+    hooks:
+      # Ruff linter
+      - id: ruff
+        args: [--fix]
+        exclude: '\.ipynb$'  # Ignore Jupyter notebooks
+      # Ruff formatter
+      - id: ruff-format
+        exclude: '\.ipynb$'  # Ignore Jupyter notebooks
+
+  # Run pytest tests
+  - repo: local
+    hooks:
+      - id: pytest
+        name: Run pytest tests
+        entry: bash
+        args: [-c, 'cd /Users/pulkit/Desktop/test/query_automation && python -m pytest tests/ -v --tb=short']
+        language: system
+        pass_filenames: false
+        always_run: true
+        require_serial: true
+
+  # Basic file checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: '\.ipynb$'
+      - id: end-of-file-fixer
+        exclude: '\.ipynb$'
+      - id: check-yaml
+      - id: check-json
+        exclude: '\.ipynb$'  # Jupyter notebooks are JSON but have special format
+      - id: check-merge-conflict
+      - id: check-case-conflict
