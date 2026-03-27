@@ -1,0 +1,21 @@
+{
+  "name": "adk-typescript-examples",
+  "version": "1.0.0",
+  "description": "Google ADK TypeScript examples from Blog 05",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node 01_basic_agent.ts",
+    "dev": "npx adk web",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@google/adk": "^0.1.0",
+    "@google/genai": "^0.7.0"
+  },
+  "devDependencies": {
+    "@google/adk-devtools": "^0.1.0",
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.3.0"
+  }
+}
