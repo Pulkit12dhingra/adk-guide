@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# uv
+.venv/
+.uv/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# IDEs
+.vscode/
+.idea/
+*.code-workspace
+
+# macOS
+.DS_Store
+
+# Node (TypeScript blog)
+node_modules/
+dist/
+*.js.map
+
+# Java
+*.class
+*.jar
+target/
+
+# Go
+vendor/
